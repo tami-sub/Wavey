@@ -1,4 +1,4 @@
-package com.example.wavey.ui.search
+package com.example.wavey.ui.search.searchRecycler
 
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +14,7 @@ import com.example.wavey.repository.SearchLyricsApi
 import com.example.wavey.repository.SearchRepository
 import com.example.wavey.repository.SongLyricsApi
 import com.example.wavey.repository.SongRepository
-import com.example.wavey.search.SearchAdapter
+import com.example.wavey.search.adapter.SearchAdapter
 
 
 class SearchRecyclerFragment : Fragment() {
@@ -22,13 +22,11 @@ class SearchRecyclerFragment : Fragment() {
     private lateinit var searchRecyclerViewModel: SearchRecyclerViewModel
     private lateinit var binding: FragmentSearchRecyclerBinding
     private lateinit var factory: SearchRecyclerModelFactory
-    private lateinit var track: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         binding = FragmentSearchRecyclerBinding.inflate(inflater, container, false)
 
@@ -36,12 +34,12 @@ class SearchRecyclerFragment : Fragment() {
             this,
             { _, result ->
                 val track = result.get("track").toString()
-                deepdown(track) })
+                startSearch(track) })
 
         return binding.root
     }
 
-        private fun deepdown(track: String) {
+        private fun startSearch(track: String) {
 
         val repository = SearchRepository(SearchLyricsApi(), track, SongRepository(SongLyricsApi()))
 
@@ -52,12 +50,13 @@ class SearchRecyclerFragment : Fragment() {
         searchRecyclerViewModel.search.observe(viewLifecycleOwner, Observer { search ->
             binding.rcView.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
-//                it.setHasFixedSize(true)
+                it.setHasFixedSize(true)
                 Log.d("test", search.toString())
-                it.adapter = SearchAdapter(search)
+                it.adapter = SearchAdapter(search, parentFragmentManager)
             }
         })
     }
+
     companion object {
         fun newInstance() = SearchRecyclerFragment()
     }

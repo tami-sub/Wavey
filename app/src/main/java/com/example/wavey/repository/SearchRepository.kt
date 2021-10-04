@@ -1,7 +1,5 @@
 package com.example.wavey.repository
 
-import com.example.wavey.artist.SafeApiRequest
-
 class SearchRepository(
     private val api: SearchLyricsApi,
     private val TrackTitle: String,
@@ -9,9 +7,9 @@ class SearchRepository(
 ): SafeApiRequest() {
     suspend fun getTrack() = apiRequest { api.getSource(TrackTitle) }
 
-    suspend fun getVideoURL(songId:String): String {
-        song.getSong(songId).response.song.media.forEach { if (it.provider == "youtube") return it.url }
-        return "There is no video clip"
-    }
+//    suspend fun getVideoURL(songId:String): String {
+//        song.getSong(songId).response.song.media.forEach { if (it.provider == "youtube") return it.url }
+//        return "There is no video clip"
+//    }
 
 }

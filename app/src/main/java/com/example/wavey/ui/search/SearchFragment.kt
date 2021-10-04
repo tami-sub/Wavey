@@ -1,5 +1,4 @@
 package com.example.wavey.ui.search
-
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,15 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.wavey.R
 import com.example.wavey.databinding.FragmentSearchBinding
+import com.example.wavey.ui.search.searchRecycler.SearchRecyclerFragment
 
 class SearchFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchBinding
     private lateinit var track: String
-
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +24,7 @@ class SearchFragment : Fragment() {
         binding = FragmentSearchBinding.inflate(inflater, container, false)
 
         track = binding.searchField.text.toString()
-        binding.searchField.addTextChangedLigitstener(object : TextWatcher {
+        binding.searchField.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }

@@ -8,8 +8,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface SongLyricsApi {
-
-
     @GET("songs/{id}&?access_token=1nk7iO3htiVOj5icyW3vwo20gzHjtxfWwlhPDadlqdDvarqYJVbNak0v2Ruhfy2l")
     suspend fun getSong(@Path("id") page: String): Response<Song>
 

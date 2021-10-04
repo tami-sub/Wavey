@@ -1,4 +1,4 @@
-package com.example.wavey.ui.search
+package com.example.wavey.ui.search.searchRecycler
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
