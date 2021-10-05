@@ -8,7 +8,7 @@ import kotlinx.coroutines.*
 
 class SearchRecyclerViewModel(private val repository: SearchRepository) : ViewModel() {
 
-    private lateinit var job:Job
+    private lateinit var job: Job
     private val _search = MutableLiveData<List<Hit>>()
     val search: MutableLiveData<List<Hit>> get() = _search
 

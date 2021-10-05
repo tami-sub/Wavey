@@ -14,7 +14,7 @@ import com.example.wavey.repository.SearchLyricsApi
 import com.example.wavey.repository.SearchRepository
 import com.example.wavey.repository.SongLyricsApi
 import com.example.wavey.repository.SongRepository
-import com.example.wavey.search.adapter.SearchAdapter
+import com.example.wavey.adapter.SearchAdapter
 
 
 class SearchRecyclerFragment : Fragment() {
@@ -34,24 +34,25 @@ class SearchRecyclerFragment : Fragment() {
             this,
             { _, result ->
                 val track = result.get("track").toString()
-                startSearch(track) })
+                startSearch(track)
+            })
 
         return binding.root
     }
 
-        private fun startSearch(track: String) {
+    private fun startSearch(track: String) {
 
         val repository = SearchRepository(SearchLyricsApi(), track, SongRepository(SongLyricsApi()))
 
         factory = SearchRecyclerModelFactory(repository)
-        searchRecyclerViewModel = ViewModelProvider(this, factory).get(SearchRecyclerViewModel::class.java)
+        searchRecyclerViewModel =
+            ViewModelProvider(this, factory).get(SearchRecyclerViewModel::class.java)
         searchRecyclerViewModel.getSearch()
 
         searchRecyclerViewModel.search.observe(viewLifecycleOwner, Observer { search ->
             binding.rcView.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
                 it.setHasFixedSize(true)
-                Log.d("test", search.toString())
                 it.adapter = SearchAdapter(search, parentFragmentManager)
             }
         })

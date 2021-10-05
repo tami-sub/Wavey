@@ -1,4 +1,5 @@
 package com.example.wavey.ui.search
+
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher

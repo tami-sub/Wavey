@@ -1,4 +1,4 @@
-package com.example.wavey.search.adapter
+package com.example.wavey.adapter
 
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +50,8 @@ class SearchAdapter(private val search: List<Hit>, private val parentFragmentMan
             val resultBundle = Bundle()
             Log.d("test", result.id.toString())
             resultBundle.putString("trackId", result.id.toString())
+            resultBundle.putString("name",result.title)
+            resultBundle.putString("owner",result.fullTitle)
             resultBundle.putString("trackURL", result.url)
 
             parentFragmentManager.setFragmentResult("songDetails", resultBundle)
