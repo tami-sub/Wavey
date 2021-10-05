@@ -19,7 +19,7 @@ class FavoritesViewModel(application:Application): AndroidViewModel(application)
         val trackDao = TrackDatabase.getDatabase(application).trackDao()
         repository = TrackRepository(trackDao)
         _readAllData = repository.readAllData
-        Log.d("test", TrackDatabase.getDatabase(application).openHelper.writableDatabase.path)
+//        Log.d("test", TrackDatabase.getDatabase(application).openHelper.writableDatabase.path)
     }
 
     fun addTrack(track: Track){

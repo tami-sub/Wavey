@@ -2,7 +2,7 @@
     <string name="app_name">Wavey</string>
     <string name="title_search">Search</string>
     <string name="title_chart">Chart</string>
-    <string name="title_favorites">FAVORITES</string>
+    <string name="title_favorites">Favorites</string>
     <string name="songId">songId</string>
     <string name="creator">created by</string>
     <string name="trackTitle">track title</string>
@@ -10,4 +10,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lyrics">Tap till lyrics appear</string>
     <string name="save_lyrics">Save Lyrics</string>
+    <string name="search">Search</string>
 </resources>

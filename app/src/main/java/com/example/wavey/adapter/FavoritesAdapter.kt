@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wavey.R
+import com.example.wavey.data.Converters
 import com.example.wavey.data.Track
 import com.example.wavey.databinding.TrackItemBinding
 import com.example.wavey.ui.favorites.FavoritesFragment
@@ -36,6 +37,7 @@ class FavoritesAdapter(private val favoritesFragment: FavoritesFragment) :Recycl
             TrackTitle.text = currentItem.title
             TrackNameCreator.text = currentItem.owner
             songId.text = currentItem.trackId.toString()
+            imageView.setImageBitmap(currentItem.image)
         }
 
         favoritesViewModel = ViewModelProvider(favoritesFragment).get(FavoritesViewModel::class.java)

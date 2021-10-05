@@ -1,5 +1,6 @@
 package com.example.wavey.data
 
+import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -13,4 +14,5 @@ data class Track (
     val trackId: Int,
     val title: String,
     val owner: String,
-    val text: String)
+    val text: String,
+    val image:Bitmap)

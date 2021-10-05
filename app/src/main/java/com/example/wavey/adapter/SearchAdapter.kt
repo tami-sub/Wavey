@@ -53,6 +53,7 @@ class SearchAdapter(private val search: List<Hit>, private val parentFragmentMan
             resultBundle.putString("name",result.title)
             resultBundle.putString("owner",result.fullTitle)
             resultBundle.putString("trackURL", result.url)
+            resultBundle.putString("imageURL", result.headerImageUrl)
 
             parentFragmentManager.setFragmentResult("songDetails", resultBundle)
         })
