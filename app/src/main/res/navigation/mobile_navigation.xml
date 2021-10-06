@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/navigation_chart"
-        android:name="com.example.wavey.ui.chart.ChartFragment"
-        android:label="@string/title_chart"
-        tools:layout="@layout/fragment_chart" />
+        android:id="@+id/navigation_randomSong"
+        android:name="com.example.wavey.ui.randomSong.RandomSongFragment"
+        android:label="@string/title_randomSong"
+        tools:layout="@layout/fragment_random_song" />
 </navigation>

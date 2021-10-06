@@ -34,19 +34,17 @@ class SearchRecyclerFragment : Fragment() {
             this,
             { _, result ->
                 val track = result.get("track").toString()
-                startSearch(track)
-            })
+                startSearch(track) })
 
         return binding.root
     }
 
-    private fun startSearch(track: String) {
+        private fun startSearch(track: String) {
 
-        val repository = SearchRepository(SearchLyricsApi(), track, SongRepository(SongLyricsApi()))
+        val repository = SearchRepository(SearchLyricsApi(), track)
 
         factory = SearchRecyclerModelFactory(repository)
-        searchRecyclerViewModel =
-            ViewModelProvider(this, factory).get(SearchRecyclerViewModel::class.java)
+        searchRecyclerViewModel = ViewModelProvider(this, factory).get(SearchRecyclerViewModel::class.java)
         searchRecyclerViewModel.getSearch()
 
         searchRecyclerViewModel.search.observe(viewLifecycleOwner, Observer { search ->

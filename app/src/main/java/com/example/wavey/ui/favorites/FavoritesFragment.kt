@@ -29,7 +29,7 @@ class FavoritesFragment : Fragment() {
 
         favoritesViewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
 
-        val adapter = FavoritesAdapter(this)
+        val adapter = FavoritesAdapter(this, parentFragmentManager, activity)
         val recyclerView = binding.rcView
         recyclerView.adapter = adapter
         recyclerView.layoutManager=LinearLayoutManager(requireContext())
@@ -43,5 +43,7 @@ class FavoritesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+
+
     }
 }

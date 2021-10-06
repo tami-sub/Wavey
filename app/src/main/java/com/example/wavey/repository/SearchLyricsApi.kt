@@ -14,17 +14,12 @@ interface SearchLyricsApi {
     @GET("search?&access_token=1nk7iO3htiVOj5icyW3vwo20gzHjtxfWwlhPDadlqdDvarqYJVbNak0v2Ruhfy2l")
     suspend fun getSource(@Query("q") page: String): Response<Search>
 
-//    @GET("songs/{id}&?access_token=1nk7iO3htiVOj5icyW3vwo20gzHjtxfWwlhPDadlqdDvarqYJVbNak0v2Ruhfy2l")
-//    suspend fun getSong(@Path("id") page: String): Response<Song>
-//
     companion object {
         operator fun invoke(): SearchLyricsApi {
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://api.genius.com/")
                 .build().create(SearchLyricsApi::class.java)
-
-
         }
     }
 

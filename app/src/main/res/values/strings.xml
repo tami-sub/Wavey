@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Wavey</string>
     <string name="title_search">Search</string>
-    <string name="title_chart">Chart</string>
+    <string name="title_randomSong">Random</string>
     <string name="title_favorites">Favorites</string>
     <string name="songId">songId</string>
     <string name="creator">created by</string>
@@ -11,4 +11,5 @@
     <string name="lyrics">Tap till lyrics appear</string>
     <string name="save_lyrics">Save Lyrics</string>
     <string name="search">Search</string>
+    <string name="added_to_favorites">Track added to Favorites</string>
 </resources>

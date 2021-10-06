@@ -1,14 +1,11 @@
 package com.example.wavey.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface TrackDao {
-    @Insert()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addTrack(track:Track)
 
     @Delete()

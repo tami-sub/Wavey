@@ -51,7 +51,6 @@ class SearchedSongFragment : Fragment() {
                 var owner = result.get("owner").toString()
                 val imageUrl = result.get("imageURL").toString()
 
-
                 owner = owner.subSequence(owner.indexOf("$name by ") + 1, owner.length) as String
 
                 val repository = SongRepository(SongLyricsApi())
@@ -60,7 +59,9 @@ class SearchedSongFragment : Fragment() {
                     SearchedSongViewModel::class.java
                 )
 
-                searchedSongViewModel.getLyrics(url)
+                repeat(12) {
+                    searchedSongViewModel.getLyrics(url)
+                }
                 binding.textDetails.setOnClickListener() {
                     searchedSongViewModel.getLyrics(url)
                 }
@@ -128,7 +129,7 @@ class SearchedSongFragment : Fragment() {
                 }
             if (track != null) {
                 favoritesViewModel.addTrack(track)
-                Toast.makeText(requireContext(), "Track added to Favorites", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.added_to_favorites), Toast.LENGTH_SHORT).show()
             }
 
         }

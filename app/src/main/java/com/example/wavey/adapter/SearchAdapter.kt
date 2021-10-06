@@ -40,7 +40,6 @@ class SearchAdapter(private val search: List<Hit>, private val parentFragmentMan
         }
 
         binding.root.setOnClickListener(View.OnClickListener {
-            Log.d("test", position.toString())
             parentFragmentManager.popBackStackImmediate()
             parentFragmentManager.beginTransaction()
                 .addToBackStack(null)
@@ -48,7 +47,6 @@ class SearchAdapter(private val search: List<Hit>, private val parentFragmentMan
                 .commit()
 
             val resultBundle = Bundle()
-            Log.d("test", result.id.toString())
             resultBundle.putString("trackId", result.id.toString())
             resultBundle.putString("name",result.title)
             resultBundle.putString("owner",result.fullTitle)
