@@ -1,0 +1,6 @@
+# Wavey
+Course work
+
+APK https://drive.google.com/file/d/1FAh6lZy4bid9sH0_viflx72bVsdTLYan/view?usp=sharing
+
+ТЗ https://docs.google.com/document/d/1Nx6zU79-QTFxv3UXeWByp1qLwS3f5qrBJAPz_JQCEsQ/edit?usp=sharing
