@@ -1,5 +1,5 @@
 # Wavey
-Course work написан за 4 дня в виду обстоятельств графика 
+Course work написан за 4 дня в виду обстоятельств графика, проект будет продолжаться
 
 APK https://drive.google.com/file/d/1FAh6lZy4bid9sH0_viflx72bVsdTLYan/view?usp=sharing
 
